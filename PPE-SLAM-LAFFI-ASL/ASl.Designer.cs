@@ -30,13 +30,27 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabAteliers = new System.Windows.Forms.TabPage();
+            this.btnDeco2 = new System.Windows.Forms.Button();
             this.lblConnexion = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvIntervenant = new System.Windows.Forms.DataGridView();
+            this.intervenants = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvTheme = new System.Windows.Forms.DataGridView();
+            this.theme = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvAtelier = new System.Windows.Forms.DataGridView();
+            this.nomAtelier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.animateur = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.heureDebut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.heureFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.places = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbxAtelier = new System.Windows.Forms.ComboBox();
             this.tabGestion = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnDeco = new System.Windows.Forms.Button();
+            this.lblFormatHeure = new System.Windows.Forms.Label();
+            this.btnHeure = new System.Windows.Forms.Button();
+            this.btnCapacite = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -68,28 +82,14 @@
             this.textBoxLogin = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnValider = new System.Windows.Forms.Button();
-            this.btnCapacite = new System.Windows.Forms.Button();
-            this.btnHeure = new System.Windows.Forms.Button();
-            this.lblFormatHeure = new System.Windows.Forms.Label();
-            this.btnDeco = new System.Windows.Forms.Button();
-            this.btnDeco2 = new System.Windows.Forms.Button();
-            this.theme = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.intervenants = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomAtelier = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.animateur = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.heureDebut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.heureFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.places = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabAteliers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIntervenant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTheme)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAtelier)).BeginInit();
             this.tabGestion.SuspendLayout();
-            this.tabConnexion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabConnexion.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -121,6 +121,16 @@
             this.tabAteliers.Text = "Ateliers";
             this.tabAteliers.UseVisualStyleBackColor = true;
             // 
+            // btnDeco2
+            // 
+            this.btnDeco2.Location = new System.Drawing.Point(628, 10);
+            this.btnDeco2.Name = "btnDeco2";
+            this.btnDeco2.Size = new System.Drawing.Size(145, 23);
+            this.btnDeco2.TabIndex = 33;
+            this.btnDeco2.Text = "Se deconnecter";
+            this.btnDeco2.UseVisualStyleBackColor = true;
+            this.btnDeco2.Click += new System.EventHandler(this.btnDeco2_Click);
+            // 
             // lblConnexion
             // 
             this.lblConnexion.AutoSize = true;
@@ -149,6 +159,13 @@
             this.dgvIntervenant.Size = new System.Drawing.Size(287, 150);
             this.dgvIntervenant.TabIndex = 3;
             // 
+            // intervenants
+            // 
+            this.intervenants.HeaderText = "Intervenants";
+            this.intervenants.Name = "intervenants";
+            this.intervenants.ReadOnly = true;
+            this.intervenants.Width = 232;
+            // 
             // dgvTheme
             // 
             this.dgvTheme.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -158,6 +175,13 @@
             this.dgvTheme.Name = "dgvTheme";
             this.dgvTheme.Size = new System.Drawing.Size(393, 150);
             this.dgvTheme.TabIndex = 2;
+            // 
+            // theme
+            // 
+            this.theme.HeaderText = "Thèmes";
+            this.theme.Name = "theme";
+            this.theme.ReadOnly = true;
+            this.theme.Width = 393;
             // 
             // dgvAtelier
             // 
@@ -172,6 +196,42 @@
             this.dgvAtelier.Name = "dgvAtelier";
             this.dgvAtelier.Size = new System.Drawing.Size(686, 80);
             this.dgvAtelier.TabIndex = 1;
+            // 
+            // nomAtelier
+            // 
+            this.nomAtelier.Frozen = true;
+            this.nomAtelier.HeaderText = "Nom de l\'atelier";
+            this.nomAtelier.Name = "nomAtelier";
+            this.nomAtelier.ReadOnly = true;
+            this.nomAtelier.Width = 250;
+            // 
+            // animateur
+            // 
+            this.animateur.Frozen = true;
+            this.animateur.HeaderText = "Animateur";
+            this.animateur.Name = "animateur";
+            this.animateur.ReadOnly = true;
+            // 
+            // heureDebut
+            // 
+            this.heureDebut.Frozen = true;
+            this.heureDebut.HeaderText = "Heure de début";
+            this.heureDebut.Name = "heureDebut";
+            this.heureDebut.ReadOnly = true;
+            // 
+            // heureFin
+            // 
+            this.heureFin.Frozen = true;
+            this.heureFin.HeaderText = "Heure de fin";
+            this.heureFin.Name = "heureFin";
+            this.heureFin.ReadOnly = true;
+            // 
+            // places
+            // 
+            this.places.Frozen = true;
+            this.places.HeaderText = "Places restantes";
+            this.places.Name = "places";
+            this.places.ReadOnly = true;
             // 
             // cbxAtelier
             // 
@@ -221,6 +281,63 @@
             this.tabGestion.TabIndex = 1;
             this.tabGestion.Text = "Gestion";
             this.tabGestion.UseVisualStyleBackColor = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(579, 405);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(99, 13);
+            this.label13.TabIndex = 34;
+            this.label13.Text = "PPE LAFFI RAYAN";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PPE_SLAM_LAFFI_ASL.Properties.Resources.icof;
+            this.pictureBox1.Location = new System.Drawing.Point(505, 294);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(255, 108);
+            this.pictureBox1.TabIndex = 33;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnDeco
+            // 
+            this.btnDeco.Location = new System.Drawing.Point(629, 13);
+            this.btnDeco.Name = "btnDeco";
+            this.btnDeco.Size = new System.Drawing.Size(145, 23);
+            this.btnDeco.TabIndex = 32;
+            this.btnDeco.Text = "Se deconnecter";
+            this.btnDeco.UseVisualStyleBackColor = true;
+            this.btnDeco.Click += new System.EventHandler(this.btnDeco_Click);
+            // 
+            // lblFormatHeure
+            // 
+            this.lblFormatHeure.AutoSize = true;
+            this.lblFormatHeure.Location = new System.Drawing.Point(322, 242);
+            this.lblFormatHeure.Name = "lblFormatHeure";
+            this.lblFormatHeure.Size = new System.Drawing.Size(117, 13);
+            this.lblFormatHeure.TabIndex = 31;
+            this.lblFormatHeure.Text = "ATTENTION FORMAT";
+            // 
+            // btnHeure
+            // 
+            this.btnHeure.Location = new System.Drawing.Point(142, 281);
+            this.btnHeure.Name = "btnHeure";
+            this.btnHeure.Size = new System.Drawing.Size(163, 23);
+            this.btnHeure.TabIndex = 30;
+            this.btnHeure.Text = "Changer l\'horaire";
+            this.btnHeure.UseVisualStyleBackColor = true;
+            this.btnHeure.Click += new System.EventHandler(this.btnHeure_Click);
+            // 
+            // btnCapacite
+            // 
+            this.btnCapacite.Location = new System.Drawing.Point(395, 115);
+            this.btnCapacite.Name = "btnCapacite";
+            this.btnCapacite.Size = new System.Drawing.Size(131, 23);
+            this.btnCapacite.TabIndex = 29;
+            this.btnCapacite.Text = "Changer la capacité :";
+            this.btnCapacite.UseVisualStyleBackColor = true;
+            this.btnCapacite.Click += new System.EventHandler(this.btnCapacite_Click);
             // 
             // label12
             // 
@@ -502,123 +619,6 @@
             this.btnValider.UseVisualStyleBackColor = true;
             this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
-            // btnCapacite
-            // 
-            this.btnCapacite.Location = new System.Drawing.Point(395, 115);
-            this.btnCapacite.Name = "btnCapacite";
-            this.btnCapacite.Size = new System.Drawing.Size(131, 23);
-            this.btnCapacite.TabIndex = 29;
-            this.btnCapacite.Text = "Changer la capacité :";
-            this.btnCapacite.UseVisualStyleBackColor = true;
-            this.btnCapacite.Click += new System.EventHandler(this.btnCapacite_Click);
-            // 
-            // btnHeure
-            // 
-            this.btnHeure.Location = new System.Drawing.Point(142, 281);
-            this.btnHeure.Name = "btnHeure";
-            this.btnHeure.Size = new System.Drawing.Size(163, 23);
-            this.btnHeure.TabIndex = 30;
-            this.btnHeure.Text = "Changer la capacité :";
-            this.btnHeure.UseVisualStyleBackColor = true;
-            this.btnHeure.Click += new System.EventHandler(this.btnHeure_Click);
-            // 
-            // lblFormatHeure
-            // 
-            this.lblFormatHeure.AutoSize = true;
-            this.lblFormatHeure.Location = new System.Drawing.Point(322, 242);
-            this.lblFormatHeure.Name = "lblFormatHeure";
-            this.lblFormatHeure.Size = new System.Drawing.Size(117, 13);
-            this.lblFormatHeure.TabIndex = 31;
-            this.lblFormatHeure.Text = "ATTENTION FORMAT";
-            // 
-            // btnDeco
-            // 
-            this.btnDeco.Location = new System.Drawing.Point(629, 13);
-            this.btnDeco.Name = "btnDeco";
-            this.btnDeco.Size = new System.Drawing.Size(145, 23);
-            this.btnDeco.TabIndex = 32;
-            this.btnDeco.Text = "Se deconnecter";
-            this.btnDeco.UseVisualStyleBackColor = true;
-            this.btnDeco.Click += new System.EventHandler(this.btnDeco_Click);
-            // 
-            // btnDeco2
-            // 
-            this.btnDeco2.Location = new System.Drawing.Point(628, 10);
-            this.btnDeco2.Name = "btnDeco2";
-            this.btnDeco2.Size = new System.Drawing.Size(145, 23);
-            this.btnDeco2.TabIndex = 33;
-            this.btnDeco2.Text = "Se deconnecter";
-            this.btnDeco2.UseVisualStyleBackColor = true;
-            this.btnDeco2.Click += new System.EventHandler(this.btnDeco2_Click);
-            // 
-            // theme
-            // 
-            this.theme.HeaderText = "Thèmes";
-            this.theme.Name = "theme";
-            this.theme.ReadOnly = true;
-            this.theme.Width = 393;
-            // 
-            // intervenants
-            // 
-            this.intervenants.HeaderText = "Intervenants";
-            this.intervenants.Name = "intervenants";
-            this.intervenants.ReadOnly = true;
-            this.intervenants.Width = 232;
-            // 
-            // nomAtelier
-            // 
-            this.nomAtelier.Frozen = true;
-            this.nomAtelier.HeaderText = "Nom de l\'atelier";
-            this.nomAtelier.Name = "nomAtelier";
-            this.nomAtelier.ReadOnly = true;
-            this.nomAtelier.Width = 250;
-            // 
-            // animateur
-            // 
-            this.animateur.Frozen = true;
-            this.animateur.HeaderText = "Animateur";
-            this.animateur.Name = "animateur";
-            this.animateur.ReadOnly = true;
-            // 
-            // heureDebut
-            // 
-            this.heureDebut.Frozen = true;
-            this.heureDebut.HeaderText = "Heure de début";
-            this.heureDebut.Name = "heureDebut";
-            this.heureDebut.ReadOnly = true;
-            // 
-            // heureFin
-            // 
-            this.heureFin.Frozen = true;
-            this.heureFin.HeaderText = "Heure de fin";
-            this.heureFin.Name = "heureFin";
-            this.heureFin.ReadOnly = true;
-            // 
-            // places
-            // 
-            this.places.Frozen = true;
-            this.places.HeaderText = "Places restantes";
-            this.places.Name = "places";
-            this.places.ReadOnly = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PPE_SLAM_LAFFI_ASL.Properties.Resources.icof;
-            this.pictureBox1.Location = new System.Drawing.Point(505, 294);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(255, 108);
-            this.pictureBox1.TabIndex = 33;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(579, 405);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(99, 13);
-            this.label13.TabIndex = 34;
-            this.label13.Text = "PPE LAFFI RAYAN";
-            // 
             // ASL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -636,9 +636,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAtelier)).EndInit();
             this.tabGestion.ResumeLayout(false);
             this.tabGestion.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabConnexion.ResumeLayout(false);
             this.tabConnexion.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
